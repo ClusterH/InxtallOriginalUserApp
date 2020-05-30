@@ -1,0 +1,43 @@
+<ion-content class="credi_background">
+  <div class="contain" padding>
+
+    <img margin-top src="./assets/imgs/logoIS.png" class="logo">
+
+    <form class="flp">
+      <div margin-bottom style="position: relative;">
+        <input [(ngModel)]="user.username" name="username" type="text" id="Username" />
+        <label for="Username">Username</label>
+      </div>
+      <div margin-bottom style="position: relative;">
+        <input [(ngModel)]="user.email" name="email" type="text" id="Email" />
+        <label for="Email">Email-id</label>
+      </div>
+      <div margin-bottom style="position: relative;">
+        <input [(ngModel)]="user.Mobile_No" name="email" type="text" id="Mobile_No" />
+        <label for="Mobile_No">Mobile_No</label>
+      </div>
+      <div margin-bottom style="position: relative;">
+        <input [(ngModel)]="user.password" name="pass" type="password" id="Password" />
+        <label for="Password">Password</label>
+      </div>
+      <div margin-bottom style="position: relative;">
+        <input [(ngModel)]="c_password" name="c_pass" type="password" id="Conform" />
+        <label for="Conform">Conform Password</label>
+      </div>
+    </form>
+    <button ion-button full (click)="register()">Sign Up</button>
+
+    <ion-row>
+      <ion-col col-12 text-center margin-top>
+        <span (tap)="GoToLogin()" class="txt2">Have an account? <b>Sign in</b></span>
+      </ion-col>
+    </ion-row>
+
+    <ion-row (tap)="viewPolicy()">
+      <ion-col col-12 text-center margin-top>
+        <span class="txt2">
+          By signing up you agree to our <b><u>terms & services.</u></b></span>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-content class="black">
+  <ion-row padding-top padding-left padding-right style="position: absolute;">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>My Profile</h1>
+    </ion-col>
+  </ion-row>
+  <img src="{{user?.coverImage}}" style="height: 161px;width: 100%" (tap)="doConfirm(2)" alt="cover-img">
+
+  <img src="./assets/imgs/camera-shutter.svg" (tap)="doConfirm(2)" class="cover-update">
+
+  <ion-row class="m-top">
+    <ion-col col-12 text-center margin-top>
+      <img src="{{user?.image}}" (tap)="doConfirm(1)" class="menu-imgStyle" alt="user-img">
+      <img src="./assets/imgs/camera-shutter2.svg" (tap)="doConfirm(1)" class="profile-update">
+      <h2 class="user-name" no-margin style="margin-top: 8px;">{{user?.username}}</h2>
+      <h2 class="menu-view" style="letter-spacing: 1px;" no-margin style="margin-top: 4px;" menuToggle (tap)="viewProfile()">Edit
+        profile</h2>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-4 text-center style="border-right: 1px solid #d2d2d2;">
+      <h1 class="title-text">bookings</h1>
+      <h1 no-margin class="text-text">{{total}}</h1>
+    </ion-col>
+    <ion-col col-4 text-center style="border-right: 1px solid #d2d2d2;">
+      <h1 class="title-text">Completed</h1>
+      <h1 no-margin class="text-text">{{complete}}</h1>
+    </ion-col>
+    <ion-col col-4 text-center>
+      <h1 class="title-text">Cancel</h1>
+      <h1 no-margin class="text-text">{{cancel}}</h1>
+    </ion-col>
+  </ion-row>
+
+  <form class="flp" padding>
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Username</label>
+      <input [(ngModel)]="user.username" name="usernamed" type="text" id="username" class="ng-pristine ng-valid ng-touched" />
+    </div>
+
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Email</label>
+      <input disabled="true" [(ngModel)]="user.email" name="usernameddf" type="text" id="email" />
+    </div>
+
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Mobile no</label>
+      <input disabled="true" [(ngModel)]="user.Mobile_No" name="usernameds" type="text" id="Mobile_No" />
+    </div>
+
+  </form>
+
+  <button ion-button full class="btn" round (click)="updatePro()">Update Profile</button>
+
+</ion-content>

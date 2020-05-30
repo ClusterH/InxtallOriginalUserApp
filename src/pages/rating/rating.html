@@ -1,0 +1,57 @@
+<ion-content #292839>
+  <ion-row padding-top padding-left padding-right class="header">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>Give Rating</h1>
+    </ion-col>
+  </ion-row> 
+  <img src="{{items.coverImage}}" class="imgStyle">
+
+  <ion-row text-center class="container">
+    <ion-col col-12>
+      <ion-col col>
+        <button ion-button icon-only clear (click)="set(1)" [large]="true">
+          <i [class]="rate<1 ? 'far fa-star iconStyle' : 'fas fa-star iconStyle'"></i>
+        </button>
+      </ion-col>
+
+      <ion-col col>
+        <button ion-button icon-only clear (click)="set(2)" [large]="true">
+          <i [class]="rate<2 ? 'far fa-star iconStyle' : 'fas fa-star iconStyle'"></i>
+        </button>
+      </ion-col>
+
+      <ion-col col>
+        <button ion-button icon-only clear (click)="set(3)" [large]="true">
+          <i [class]="rate<3 ? 'far fa-star iconStyle' : 'fas fa-star iconStyle'"></i>
+        </button>
+      </ion-col>
+
+      <ion-col col>
+        <button ion-button icon-only clear (click)="set(4)" [large]="true">
+          <i [class]="rate<4 ? 'far fa-star iconStyle' : 'fas fa-star iconStyle'"></i>
+        </button>
+      </ion-col>
+
+      <ion-col col>
+        <button ion-button icon-only clear (click)="set(5)" [large]="true">
+          <i [class]="rate<5 ? 'far fa-star iconStyle' : 'fas fa-star iconStyle'"></i>
+        </button>
+      </ion-col>
+    </ion-col>
+  </ion-row>
+
+  <ion-item padding>
+    <ion-label color="primary" stacked>Comment</ion-label>
+    <ion-textarea max="257" [(ngModel)]="giveData.cmt" min="10" placeholder="Enter a comment"></ion-textarea>
+  </ion-item>
+
+  <ion-row>
+    <ion-col col-12>
+      <button [disabled]="!giveData.cmt" style="height: 4.6rem;" ion-button full (click)="submit()">Submit Rate</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

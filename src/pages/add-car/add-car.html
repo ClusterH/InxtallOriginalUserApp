@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-row padding-top padding-left padding-right class="black">
+    <ion-col col-1 text-center>
+      <ion-icon (tap)="GoBack()" class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin> Add Car </h1>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content padding class="black">
+  <ion-row>
+    <ion-col col-4 text-center>
+      <img (click)="presentActionSheet(1)" src="{{car.image_1}}" class="car-image">
+    </ion-col>
+    <ion-col col-4 text-center>
+      <img (click)="presentActionSheet(2)" src="{{car.image_2}}" class="car-image">
+    </ion-col>
+    <ion-col col-4 text-center>
+      <img (click)="presentActionSheet(3)" src="{{car.image_3}}" class="car-image">
+    </ion-col>
+  </ion-row>
+
+  <form class="flp">
+    <div margin-bottom style="position: relative;">
+      <input [(ngModel)]="car.Brand" name="username" type="text" id="Username" />
+      <label for="Username">Car Brand</label>
+    </div>
+    <div margin-bottom style="position: relative;">
+      <input [(ngModel)]="car.Model" name="email" type="text" id="Email" />
+      <label for="Email">Car Model</label>
+    </div>
+    <div margin-bottom style="position: relative;">
+      <input [(ngModel)]="car.Type" name="email" type="text" id="Mobile_No" />
+      <label for="Mobile_No">Car Type</label>
+    </div>
+    <div margin-bottom style="position: relative;">
+      <input [(ngModel)]="car.Number" name="pass" type="number" id="Password" />
+      <label for="Password">Car Number</label>
+    </div>
+    <div margin-bottom style="position: relative;">
+      <input [(ngModel)]="car.Color" name="c_pass" type="text" id="Conform" />
+      <label for="Conform">Car Color</label>
+    </div>
+  </form>
+
+  <button class="btnStyle" ion-button full (click)="addCar()">Add Car</button>
+
+  <ion-row (tap)="viewPolicy()">
+    <ion-col col-12 text-center margin-top>
+      <span class="txt2"> By adding car you will agree to our <b><u>terms & services.</u></b></span>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

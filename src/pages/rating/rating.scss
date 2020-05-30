@@ -1,0 +1,69 @@
+page-rating {
+  .header {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+  }
+
+  .content-md{
+    background-color: #191822;
+  }
+
+  .content-ios{
+    background-color: #191822;
+  }
+  .item-md {
+    color: #000;
+    background-color: transparent;
+  }
+  .iconStyle {
+    font-size: 9vw;
+    color: goldenrod;
+  }
+  .platform-mobile textarea .text-input{
+    resize: none;
+    height: 120px !important;
+  }
+  .item-label-stacked .text-input-md{
+    height: 120px !important;
+  }
+  .text-input-md {
+    margin: 13px 8px;
+    color: white !important;
+    font-weight: 300
+  }
+  .label-md-primary{
+    color: white !important;
+    font-weight: 300
+  }
+  ion-textarea{
+    height: 120px !important;
+    background-color: #f0f8ff1c;
+  }
+  .text-input-ios {
+    margin: 13px 8px;
+    color: white;
+  }
+  .imgStyle {
+    width: 100%;
+    height: 220px;
+  }
+
+  .container {
+    background-color: rgba(70, 67, 67, 0.5);
+    margin-top: -94px;
+  }
+
+  .title {
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    margin-top: 3px;
+    margin-left: 7px;
+  }
+
+  .backIcon {
+    font-size: 32px;
+    color: white;
+  }
+}

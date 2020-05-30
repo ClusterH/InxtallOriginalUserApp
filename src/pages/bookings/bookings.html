@@ -1,0 +1,282 @@
+<ion-header>
+  <ion-row padding-top padding-left padding-right class="black">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>My Bookings</h1>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content padding class="black">
+
+  <div padding-left padding-right class="header">
+    <ion-row>
+      <ion-col (tap)="Open(1)" class="p-top-9" text-center>
+        <span [class]="open == 1 ? 'active-tab' : 'inactive-tab'">Active</span>
+        <h1 class="hr" *ngIf="open == 1"></h1>
+      </ion-col>
+      <ion-col (tap)="Open(2)" class="p-top-9" text-center>
+        <span [class]="open == 2 ? 'active-tab' : 'inactive-tab'">Completed</span>
+        <h1 class="hr" *ngIf="open == 2"></h1>
+      </ion-col>
+      <ion-col (tap)="Open(3)" class="p-top-9" text-center>
+        <span [class]="open == 3 ? 'active-tab' : 'inactive-tab'">Cancel</span>
+        <h1 class="hr" *ngIf="open == 3"></h1>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ng-container *ngIf="open == 1">
+    <ng-container *ngFor="let i of userBooks ;let p = index">
+      <ng-container *ngIf="i.status == 1 && activeLength != 0">
+        <div>
+          <ion-card class="back">
+            <ion-row padding-top>
+              <ion-col col-3 text-center>
+                <img class="car-img" src="{{i?.marchant?.profileImage}}">
+              </ion-col>
+              <ion-col col-9 style="margin-top: 11px;">
+                <h3 no-margin class="car-nm">{{i?.marchant?.shopName}}</h3>
+                <h3 no-margin class="car-plat">{{i?.marchant?.address}}</h3>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Type</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.Type}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Total</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">${{i?.total}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Date & Time</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.startTime | date:'fullDate'}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Employee</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.Empnm}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>On the way ?</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text"> {{ i?.onTheWay == 1 ? 'Yes' : 'No' }}
+                </h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Booked for</h2>
+              </ion-col>
+              <ion-col col-7>
+                <span class="text-text" *ngFor="let s of i.servicesInfo;let last = last;">
+                  <span>{{s.name}}</span><span *ngIf='!last'>,</span>
+                </span>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col text-center *ngIf="i.onTheWay == 2 && i.paymentStatus == 0">
+                <button (click)="payNow(i)" class="btnStyle2" ion-button icon-end>
+                  Pay Now
+                  <ion-icon name="md-card"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col text-center *ngIf="i.onTheWay == 1">
+                <button (click)="viewMap(i)" class="btnStyle2" ion-button icon-end>
+                  View Employee
+                  <ion-icon name="navigate"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ng-container>
+    </ng-container>
+    <img style="position: absolute;bottom: 0;" *ngIf="activeLength == 0" class="animated bounceInDown" src="./assets/imgs/notdatafound.png">
+
+  </ng-container>
+
+  <ng-container *ngIf="open == 2">
+    <ng-container *ngFor="let i of userBooks ;let p = index">
+      <ng-container *ngIf="i.status == 2">
+        <div>
+          <ion-card class="back">
+            <ion-row padding-top>
+              <ion-col col-3 text-center>
+                <img class="car-img" src="{{i?.marchant?.profileImage}}">
+              </ion-col>
+              <ion-col col-9 style="margin-top: 11px;">
+                <h3 no-margin class="car-nm">{{i?.marchant?.shopName}}</h3>
+                <h3 no-margin class="car-plat">{{i?.marchant?.address}}</h3>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Type</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.Type}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Total</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">${{i?.total}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Date & Time</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.startTime | date:'fullDate'}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Employee</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.Empnm}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Booked for</h2>
+              </ion-col>
+              <ion-col col-7>
+                <span class="text-text" *ngFor="let s of i.servicesInfo;let last = last;">
+                  <span>{{s.name}}</span><span *ngIf='!last'>,</span>
+                </span>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="i?.reviewGiven == false">
+              <ion-col col text-center>
+                <button (click)="rate(i)" class="btnStyle2" ion-button icon-end>
+                  Give Rating
+                  <ion-icon name="star"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ng-container>
+
+    </ng-container>
+    <img style="position: absolute;bottom: 0;" *ngIf="completeLength == 0" class="animated bounceInDown" src="./assets/imgs/notdatafound.png">
+
+  </ng-container>
+
+  <ng-container *ngIf="open == 3">
+    <ng-container *ngFor="let i of userBooks ;let p = index">
+      <ng-container *ngIf="i.status == 3">
+        <div>
+          <ion-card class="back">
+            <ion-row padding-top>
+              <ion-col col-3 text-center>
+                <img class="car-img" src="{{i?.marchant?.profileImage}}">
+              </ion-col>
+              <ion-col col-9 style="margin-top: 11px;">
+                <h3 no-margin class="car-nm">{{i?.marchant?.shopName}}</h3>
+                <h3 no-margin class="car-plat">{{i?.marchant?.address}}</h3>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Type</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.Type}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Total</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">${{i?.total}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Date & Time</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.startTime | date:'fullDate'}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Employee</h2>
+              </ion-col>
+              <ion-col col-7>
+                <h2 class="text-text">{{i?.Empnm}}</h2>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-top-12">
+              <ion-col col-1></ion-col>
+              <ion-col col-4>
+                <h2 class="text-head" no-margin>Booked for</h2>
+              </ion-col>
+              <ion-col col-7>
+                <span class="text-text" *ngFor="let s of i.servicesInfo;let last = last;">
+                  <span>{{s.name}}</span><span *ngIf='!last'>,</span>
+                </span>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="i?.reviewGiven == false">
+              <ion-col col text-center>
+                <button (click)="rate(i)" class="btnStyle2" ion-button icon-end>
+                  Give Rating
+                  <ion-icon name="star"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ng-container>
+
+    </ng-container>
+    <img style="position: absolute;bottom: 0;" *ngIf="cancelLength == 0" class="animated bounceInDown" src="./assets/imgs/notdatafound.png">
+  </ng-container>
+
+</ion-content>

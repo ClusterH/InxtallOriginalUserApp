@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-row padding-top padding-left padding-right class="black">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>FAQ's</h1>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content padding class="black">
+
+  <img class="help-img" src="./assets/imgs/help.svg">
+
+  <ion-card *ngFor="let i of FAQs;let a = index" class="back">
+
+    <ion-row padding>
+      <ion-col col-12>
+        <h2 no-margin class="question">Q. ) {{i.question}}</h2>
+      </ion-col>
+     
+      <ion-col col-12>
+        <p class="white">
+          <i class="far fa-hand-point-right iconstyle"></i> &nbsp;&nbsp;&nbsp; {{i.answer}}</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

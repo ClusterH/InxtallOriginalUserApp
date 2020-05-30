@@ -1,0 +1,295 @@
+page-marchant {
+  .disp{
+    display: block
+  }
+  .non{
+    display: none
+  }
+  .top-img {
+    width: 100%;
+    height: 175px;
+  }
+
+  .item-md {
+    background-color: #292839;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+  }
+
+  .header {
+    background-color: black;
+    margin-top: 11px;
+    height: 41px;
+  }
+
+  .duration {
+    font-size: 12px;
+    color: #d0c9c9;
+  }
+
+  .container {
+    background-color: #292839;
+    width: 100%;
+    margin-top: -4px;
+    height: auto;
+  }
+
+  .mapStyle {
+    position: relative;
+
+    height: 30%;
+    width: 100%;
+    margin-top: 13px;
+  }
+
+  .total {
+    font-size: 21px;
+    margin-top: 8px;
+    margin-left: 8px;
+    color: black;
+  }
+
+  .btn {
+    overflow: hidden;
+    height: 3.6rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+
+  .footer {
+    background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  }
+
+  .active-tab {
+    background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .gmnoprint {
+    display: none !important
+  }
+
+  .user-nm {
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    margin-left: 9px;
+    margin-top: 8px;
+  }
+
+  .user-date {
+    font-size: 12px;
+    color: gray;
+    font-weight: 400;
+    margin-left: 9px;
+    margin-top: 4px;
+  }
+
+  .star-icon {
+    color: orange;
+    margin-right: 5px;
+  }
+
+  .star-icon-2 {
+    color: #97989b;
+    margin-right: 5px;
+  }
+
+  .cmt {
+    color: white;
+    padding: 23px;
+    padding-top: 0;
+    text-align: justify;
+    padding-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .divider {
+    border-bottom: 1px solid gray;
+  }
+
+  .p-top-9 {
+    padding-top: 9px;
+  }
+
+  .inactive-tab {
+    color: gray;
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .hr {
+    border-top: 3px solid white;
+    width: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6px;
+  }
+
+  .service-container {}
+
+  .checkbox-md {
+    top: 2px;
+  }
+
+  .checkbox-md .checkbox-icon {
+    border-color: #787878;
+    background-color: #2d2c40;
+  }
+
+  .checkbox-ios {
+    top: 2px;
+  }
+
+  .checkbox-ios .checkbox-icon {
+    border-color: #787878;
+    background-color: #2d2c40;
+  }
+
+
+  .car-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 9px;
+    margin-top: 1px;
+  }
+
+  .text {
+    color: white;
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: none !important;
+  }
+
+  .item-md {
+    border-bottom: none !important
+  }
+
+  .heading {
+    color: white;
+    font-size: 21px;
+    font-weight: 400;
+  }
+
+  .about-container {}
+
+  .open-text {
+    color: #31d9ab;
+  }
+
+  .title-text-2 {
+    font-size: 15px;
+    color: white;
+    font-weight: 400;
+  }
+
+  .title-text {
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+  }
+
+  .m-top-5 {
+    margin-top: 5px;
+  }
+
+  .desc {
+    color: white;
+    font-weight: 300;
+  }
+
+  .Sub-heading {
+    color: gray;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .icon {
+    font-size: 6vw;
+    color: black;
+  }
+
+  .head {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .txt2 {
+    font-size: 4vw;
+    color: white;
+  }
+
+  .rate {
+    height: 20px;
+    background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+    width: 48px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 25px;
+    color: white;
+    font-weight: 300;
+    padding-left: 8px;
+    border-bottom-right-radius: 13px;
+  }
+
+  .footer-style {
+    background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+    padding: 5px;
+    position: sticky;
+    bottom: 0
+  }
+
+  .m-top {
+    margin-top: 4px;
+  }
+
+  .m-top-13 {
+    margin-top: 13px;
+  }
+
+  .white {
+    color: white
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: none !important
+  }
+
+  .item-md {
+    padding-bottom: none !important;
+    padding-left: 0px !important
+  }
+
+  .label-md {
+    margin: 0px !important
+  }
+
+  .padd {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .borderButton {
+    border-width: 1px;
+    border-style: solid;
+    border-color: white !important;
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}

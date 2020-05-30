@@ -1,0 +1,7 @@
+{
+  "name": "CarBoy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,55 @@
+page-payment {
+  .txt2 {
+    font-size: 4vw;
+    color: white;
+  }
+
+  .borderButton {
+    border-width: 1px;
+    border-style: solid;
+    border-color: white !important;
+    color: white;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .item-md {
+    background-color: #191825 !important;
+  }
+
+  .item-ios {
+    background-color: #191825 !important;
+  }
+
+  .top {
+    margin-top: 1vh;
+  }
+
+  .title {
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    margin-top: 3px;
+    margin-left: 7px;
+  }
+
+  .backIcon {
+    font-size: 32px;
+    color: white;
+  }
+
+  .footer-style {
+    background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+    padding: 5px;
+  }
+  .borderButton {
+    border-width: 1px;
+    border-style: solid;
+    border-color: white !important;
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}

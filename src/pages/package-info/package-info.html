@@ -1,0 +1,59 @@
+<ion-content padding class="modal-container" (tap)="Cancel(1)">
+  <div (tap)="Cancel(2)" class="product">
+    <ion-row (tap)="Cancel(2)" padding-top>
+      <ion-col col-3 text-right>
+        <img class="car-img" src="{{packageData?.image}}">
+      </ion-col>
+      <ion-col col-9 style="margin-top: 11px;">
+        <h3 no-margin class="car-nm">{{packageData?.name}}</h3>
+        <h3 no-margin class="car-plat">{{packageData?.description}}</h3>
+        <h3></h3>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+        <ion-col col-2></ion-col>
+
+      <ion-col col-3 text-center>
+        Price
+      </ion-col>
+      
+      <ion-col col-3 text-center>
+        {{packageData?.price}}$
+      </ion-col>
+      <ion-col col-3></ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-3 text-center>
+        Duration
+      </ion-col>
+      
+      <ion-col col-3 text-center>
+        {{packageData?.duration}}-min
+      </ion-col>
+      <ion-col col-3></ion-col>
+
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-12 text-center>
+          Services
+        </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col col-12 text-center>
+          <h3 *ngFor="let i of ser" style="font-size: 15px;font-weight: 300" no-margin>• {{i.name}}</h3>
+      </ion-col>
+    </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-12>
+            <button (tap)="Cancel(2)" (click)="GoToNext(marchant)" ion-button round outline class="btnSty">Book Now</button>
+        </ion-col>
+      </ion-row>
+  </div>
+</ion-content>

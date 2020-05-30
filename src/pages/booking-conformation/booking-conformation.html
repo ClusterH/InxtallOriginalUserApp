@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-row padding-top padding-left padding-right style="background-color: #2d2c40">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>Booking Conformation</h1>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content class="back">
+  <div class="container-div" padding margin-top>
+    <h2 no-margin class="head-txt">Services Provider</h2>
+    <h2 class="txt1" no-margin>{{marchant?.shopName}}</h2>
+    <h2 no-margin class="txt2">{{marchant?.address}}</h2>
+  </div>
+
+  <div class="container-div" padding margin-top>
+    <h2 no-margin class="head-txt">Car Selected</h2>
+    <ion-item>
+      <ion-label>Select Car</ion-label>
+      <ion-select [(ngModel)]="bookings.carId">
+        <ion-option *ngFor="let i of UserCar" value="{{i.id}}">{{i.Brand}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="container-div" padding margin-top>
+    <h2 no-margin class="head-txt">Select Location</h2>
+    <ion-item>
+      <ion-label>Select Address</ion-label>
+      <ion-select (ionChange)="ChangeLocation()" [(ngModel)]="bookings.address">
+        <ion-option *ngFor="let i of Address" value="{{i.id}}">{{i.Address}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="container-div" padding margin-top>
+    <h2 no-margin class="head-txt">Select Option</h2>
+    <ion-item>
+      <ion-label>Select Option</ion-label>
+      <ion-select [(ngModel)]="bookings.UserWant">
+        <ion-option value="COME">COME</ion-option>
+        <ion-option [disabled]="lets" value="STAY">STAY</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="container-div" padding margin-top>
+    <h2 no-margin class="head-txt">Date & Time</h2>
+    <h2 (tap)="letDate()" class="txt1" no-margin><span *ngIf="bookings.startTime">{{bookings.startTime}}</span>
+      <span *ngIf="!bookings.startTime">Tap to select</span>
+    </h2>
+  </div>
+
+  <div class="container-div" padding margin-top>
+    <h2 no-margin class="head-txt">Selected Services</h2>
+    <ion-row *ngFor="let i of services">
+      <ion-col col-8 text-left>
+        <h2 class="txt1" no-margin>{{i.name}}</h2>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <h2 class="txt1" no-margin>${{i.price}}</h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-8 text-left>
+        <h2 class="txt1" no-margin>Amount Paid</h2>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <h2 class="txtLast" no-margin>${{bookings?.total}}$</h2>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<ion-footer no-margin>
+  <button [disabled]="isenabled" no-margin class="bookBtn" ion-button full (click)="Availability()">Book Now</button>
+</ion-footer>

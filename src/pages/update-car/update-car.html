@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-row padding-top padding-left padding-right class="black">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>{{update.Brand}}</h1>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content padding class="black">
+
+  <ion-row>
+    <ion-col col-4 text-center>
+      <img (click)="presentActionSheet(1)" alt="car-image" src="{{update.image_1}}" class="car-image">
+    </ion-col>
+    <ion-col col-4 text-center>
+      <img (click)="presentActionSheet(2)" alt="car-image" src="{{update.image_2}}" class="car-image">
+    </ion-col>
+    <ion-col col-4 text-center>
+      <img (click)="presentActionSheet(3)" alt="car-image" src="{{update.image_3}}" class="car-image">
+    </ion-col>
+  </ion-row>
+
+  <form class="flp" padding>
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Brand</label>
+      <input [(ngModel)]="update.Brand" name="usernamed" type="text" id="username" class="ng-pristine ng-valid ng-touched" />
+    </div>
+
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Model</label>
+      <input [(ngModel)]="update.Model" name="usernameddf" type="text" id="Model" />
+    </div>
+
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Color</label>
+      <input [(ngModel)]="update.Color" name="usernamedsasd" type="text" id="Color" />
+    </div>
+
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Type</label>
+      <input [(ngModel)]="update.Type" name="usernamedsasv" type="text" id="Type" />
+    </div>
+
+    <div margin-bottom style="position: relative;">
+      <label class="focussed">Number</label>
+      <input disabled="true" [(ngModel)]="update.Number" name="usernamedssv" type="text" id="Number" />
+    </div>
+  </form>
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="updateThis()">Update Info</button>
+</ion-footer>

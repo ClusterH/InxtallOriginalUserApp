@@ -1,0 +1,134 @@
+page-booking-conformation {
+  .header-md::after {
+    background-image: none !important;
+  }
+
+  .ion-header {
+    background-color: #292839 !important;
+  }
+
+  .title {
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    margin-top: 3px;
+    margin-left: 7px;
+  }
+
+  .backIcon {
+    font-size: 32px;
+    color: white;
+  }
+
+  .bookBtn {
+    height: 5.6rem;
+    background-color: #323048;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: inherit;
+    background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  }
+
+  .carNm {
+    font-size: 14px;
+    color: gray;
+    font-weight: 300;
+  }
+
+  .container-div {
+    margin-left: 9px;
+    border-bottom: 1.5px solid black;
+  }
+
+  .head-txt {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 13px;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .txt1 {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 7px;
+    font-weight: 400;
+  }
+
+  .txtLast {
+    color: white;
+    margin-bottom: 7px;
+    font-weight: 400;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  .datetime-md {
+    padding: 0 !important;
+    position: relative !important;
+  }
+
+  .datetime-text {
+    opacity: 0 !important;
+  }
+
+  .txt2 {
+    font-size: 14px;
+    color: white;
+    font-weight: 300;
+    color: gray;
+  }
+
+  .item-md {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #2d2c40 !important;
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: none !important;
+  }
+
+  .label-md {
+    color: white;
+  }
+
+  .select-text {
+    color: white;
+  }
+
+  .car-nm {
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+    margin-top: 6px;
+    margin-left: 6px;
+  }
+
+  .car-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .back {
+    background-color: #292839;
+  }
+
+  .dropDown {
+    color: white;
+    top: 15px;
+    position: relative;
+  }
+
+  .locationHead {
+    font-size: 13px;
+    margin-top: 8px;
+    color: white;
+    font-weight: 300;
+  }
+}

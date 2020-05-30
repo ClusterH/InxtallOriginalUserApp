@@ -1,0 +1,26 @@
+page-about-us {
+  .header-md::after {
+    background-image: none !important
+  }
+
+  .header-ios::after {
+    background-image: none !important
+  }
+
+  .title {
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    margin-top: 3px;
+    margin-left: 7px;
+  }
+
+  .backIcon {
+    font-size: 32px;
+    color: white;
+  }
+
+  .white {
+    color: white
+  }
+}

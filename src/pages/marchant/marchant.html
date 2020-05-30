@@ -1,0 +1,200 @@
+<ion-content class="black">
+
+  <ion-row class="head">
+    <ion-col (tap)="goBack()" col-6 text-left>
+      <i class="fas fa-chevron-left icon"></i>
+    </ion-col>
+    <ion-col col-6 text-right>
+    </ion-col>
+  </ion-row>
+
+  <img src="{{marchant?.coverImage}}" [alt]="marchant?.shopName" class="top-img">
+
+  <div class="container" style="position: relative;">
+    <ion-row>
+      <ion-col col-3 text-center>
+        <img style="margin-top: 10px;" class="car-img" [alt]="marchant?.shopName" src="{{marchant?.profileImage}}">
+      </ion-col>
+      <ion-col col-9 style="margin-top: 13px;margin-left: -7px;">
+        <h2 no-margin class="heading">{{marchant?.shopName}}</h2>
+        <h2 class="Sub-heading" no-margin>{{marchant?.address}}</h2>
+      </ion-col>
+    </ion-row>
+
+    <div (tap)="Cancel(2)" class="rate">{{avgRating}} <i class="far fa-star stio" style="color: white"></i>
+    </div>
+
+    <div padding-left padding-right class="header">
+      <ion-row>
+        <ion-col (tap)="Open(1)" class="p-top-9" text-center>
+          <span [class]="open == 1 ? 'active-tab' : 'inactive-tab'">Services</span>
+          <h1 class="hr" *ngIf="open == 1"></h1>
+        </ion-col>
+        <ion-col (tap)="Open(4)" class="p-top-9" text-center>
+          <span [class]="open == 4 ? 'active-tab' : 'inactive-tab'">Packages</span>
+          <h1 class="hr" *ngIf="open == 4"></h1>
+        </ion-col>
+        <ion-col (tap)="Open(2)" class="p-top-9" text-center>
+          <span [class]="open == 2 ? 'active-tab' : 'inactive-tab'">About</span>
+          <h1 class="hr" *ngIf="open == 2"></h1>
+        </ion-col>
+        <ion-col (tap)="Open(3)" class="p-top-9" text-center>
+          <span [class]="open == 3 ? 'active-tab' : 'inactive-tab'">Reviews</span>
+          <h1 class="hr" *ngIf="open == 3"></h1>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div [class]="open == 1 ? 'service-container disp' : 'service-container non'">
+      <ng-container *ngFor="let i of service | async">
+        <ion-item *ngIf="i.status == 'Active'">
+          <ion-label>
+            <ion-row class="m-top-13" *ngIf="i?.status == 'Active'">
+              <ion-col col-3 text-center>
+                <img class="car-img" src="{{i?.image}}">
+              </ion-col>
+              <ion-col col-6 style="margin-left: 12px;">
+                <h2 class="text">{{ i?.name }}</h2>
+                <h2 class="duration" no-margin>Price : ${{i?.price}}</h2>
+                <h2 class="duration" no-margin>Duration : {{i?.duration}}</h2>
+              </ion-col>
+            </ion-row>
+          </ion-label>
+          <ion-checkbox item-end (ionChange)="AddToCart(i)" [(ngModel)]="i.check" class="item-checkbox-right"></ion-checkbox>
+        </ion-item>
+      </ng-container>
+    </div>
+
+    <div [class]="open == 2 ? 'about-container disp' : 'about-container non'">
+
+      <ion-row padding-left padding-right margin-top>
+        <ion-col col-5 text-left>
+          <h2 no-margin class="title-text">OPENING HOURS</h2>
+        </ion-col>
+        <ion-col col-7 text-right>
+          <h2 no-margin class="title-text-2"><span class="open-text">Open From</span><br> <span style="    color: #c1bcbc;">({{
+              currentTime.start | date:'hh mm:a '}}
+              - {{currentTime.end | date:'hh mm:a '}})</span> </h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row padding-left padding-right margin-top>
+        <ion-col col-5 text-left>
+          <h2 no-margin class="title-text">ABOUT</h2>
+        </ion-col>
+        <ion-col col-7 text-right>
+        </ion-col>
+      </ion-row>
+      <ion-row padding-left padding-right class="m-top-5">
+        <ion-col col-12>
+          <p class="desc" no-margin>{{marchant.description}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row padding-left padding-right margin-top>
+        <ion-col col-5 text-left>
+          <h2 no-margin class="title-text">OUR EMPLOYEE</h2>
+        </ion-col>
+        <ion-col col-7 text-right>
+          <h2 no-margin class="title-text-2"></h2>
+        </ion-col>
+      </ion-row>
+
+      <ng-container *ngFor="let i of employee">
+        <ion-row *ngIf="i.status == 'Active'">
+          <ion-col col-3 text-center>
+            <img style="margin-top: 10px;height: 40px;width: 40px;" class="car-img" src="{{i.image}}">
+          </ion-col>
+          <ion-col col-9 style="margin-top: 13px;margin-left: -7px;">
+            <h2 no-margin class="heading" style="font-size: 17px">{{i.name}}</h2>
+            <h2 class="Sub-heading" no-margin>{{i.description}}</h2>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+
+      <ion-row padding-left padding-right margin-top>
+        <ion-col col-5 text-left>
+          <h2 no-margin class="title-text">EMAIL ADDRESS</h2>
+        </ion-col>
+        <ion-col col-7 text-right>
+          <h2 no-margin class="title-text-2"></h2>
+        </ion-col>
+      </ion-row>
+      <ion-row padding-left padding-right class="m-top-5">
+        <ion-col col-12>
+          <p class="desc" no-margin>{{marchant.email}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row padding-left padding-right margin-top>
+        <ion-col col-5 text-left>
+          <h2 no-margin class="title-text">ADDRESS</h2>
+        </ion-col>
+        <ion-col col-7 text-right>
+          <h2 no-margin class="title-text-2"><span class="open-text" (tap)="getDirection()">Get Direction</span></h2>
+        </ion-col>
+      </ion-row>
+      <ion-row padding-left padding-right class="m-top-5">
+        <ion-col col-12>
+          <p class="desc" no-margin>{{marchant.address}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div [class]="open == 3 ? 'reviews-container disp' : 'reviews-container non'">
+
+      <ion-row class="divider padd" *ngFor="let i of ratingData">
+        <ion-col col-2>
+          <img class="car-img" src="{{i?.user?.image}}">
+        </ion-col>
+        <ion-col col-4>
+          <h2 no-margin class="user-nm">{{i?.user?.username}}</h2>
+          <h2 no-margin class="user-date">{{i?.data?.create_date | date }}</h2>
+        </ion-col>
+        <ion-col col-6 text-right style="margin-top: 13px">
+          <i [class]="i?.data?.star >= 1 ? 'fas fa-star' : 'far fa-star'"></i>
+          <i [class]="i?.data?.star >= 2 ? 'fas fa-star' : 'far fa-star'"></i>
+          <i [class]="i?.data?.star >= 3 ? 'fas fa-star' : 'far fa-star'"></i>
+          <i [class]="i?.data?.star >= 4 ? 'fas fa-star' : 'far fa-star'"></i>
+          <i [class]="i?.data?.star >= 5 ? 'fas fa-star' : 'far fa-star'"></i>
+        </ion-col>
+        <ion-col col-12>
+          <p class="cmt" no-margin>
+            {{i?.data?.cmt}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div [class]="open == 4 ? 'reviews-container disp' : 'reviews-container non'">
+      <ng-container *ngFor="let i of package | async">
+        <ion-row class="m-top-13" *ngIf="i?.status == 'Active'" (tap)="ViewPackage(i)">
+          <ion-col col-3 text-center>
+            <img class="car-img" src="{{i?.image}}">
+          </ion-col>
+          <ion-col col-6>
+            <h2 class="text" style="margin-top:0px">{{i?.name}}</h2>
+            <h2 class="duration" no-margin style="margin-top:0px">Duration : {{i?.duration}}-min</h2>
+          </ion-col>
+          <ion-col col-3 text-center>
+            <h2 class="text" style="margin-top:0px">${{i?.price}}</h2>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </div>
+  </div>
+
+  <div #wow id="wow" class="mapStyle"></div>
+
+  <ion-row text-center class="footer-style" id="footer">
+    <ion-col col-6 class="m-top">
+      <span class="txt2">Total</span><br>
+      <span class="txt2">${{tot}}</span>
+    </ion-col>
+
+    <ion-col col-6>
+      <button (click)="next()" class="txt2" class="borderButton" ion-button round outline>BOOK NOW</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

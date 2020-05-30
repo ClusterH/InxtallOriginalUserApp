@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-row padding-top padding-left padding-right style="background-color:  #191822">
+    <ion-col (tap)="GoToBack()" col-1 text-center>
+      <ion-icon class="backIcon" name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col col-11>
+      <h1 class="title" no-margin>Checkout</h1>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content padding style="background-color:  #191822">
+
+  <ion-row style="margin-top: 3vh;">
+    <ion-col col-12>
+      <ion-list radio-group [(ngModel)]="relationship">
+        <ion-item>
+          <ion-label>
+            <img style="height: 73px;" src="./assets/imgs/paypal.svg">
+          </ion-label>
+          <ion-radio value="1" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img style="height: 73px;" src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/551967-269065cb453a9df828ad6fa8ef280339-medium_jpg.jpg?buster=1525590760">
+          </ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <img style="height: 73px;" src="./assets/imgs/payment-method.svg">
+          </ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-row text-center class="footer-style">
+    <ion-col col-6 class="m-top">
+      <span class="txt2">Pay to</span><br>
+      <span class="txt2">{{bookedData.marchant.shopName}}</span>
+    </ion-col>
+
+    <ion-col col-6>
+      <button (click)="checkout()" class="txt2" class="borderButton" ion-button round outline>PAY NOW</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

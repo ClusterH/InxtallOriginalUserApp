@@ -1,0 +1,104 @@
+.credi_background {
+  background-image: url(../assets/imgs/brunel-johnson-653951-unsplash.jpg);
+  background-size: 100% 100%;
+}
+
+.menu-imgStyle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%
+}
+
+.menu-row {
+  font-size: 18px;
+  color: white;
+  margin-top: 1vh;
+  height: 50px;
+  padding-top: 9px;
+  font-weight: 300;
+}
+
+.activeMenu {
+  font-size: 18px;
+  color: white;
+  margin-top: 1vh;
+  height: 40px;
+  padding-top: 4px;
+  background: rgba(99, 97, 97, 0.26);
+  border-left: 5px solid white;
+}
+
+.menu-user-name {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 6px
+}
+
+.menu-view {
+  text-transform: uppercase;
+  color: gray;
+  font-weight: 300;
+  font-size: 10px;
+  margin-top: 6px
+}
+
+.menu-contain {
+  background: rgba(10, 10, 10, 0.73);
+  height: 100%;
+  width: 100%;
+}
+
+.black {
+  background-color: #191822
+}
+
+.menu-cover-img {
+  height: 131px;
+  width: 100%
+}
+
+.fab-md {
+  background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+}
+
+.fab-ios {
+  background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+}
+
+.checkbox-md .checkbox-checked {
+  background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%) !important;
+  background-color: none !important;
+  border-color: transparent !important;
+}
+
+.fa, .fas{
+  background: -webkit-gradient(linear, left top, right top, from(#2af598), to(#009efd));
+  background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ion-md-menu:before{
+  background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ion-ios-menu:before{
+  background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa, .far, .fas{
+  background: -webkit-gradient(linear, left top, right top, from(#2af598), to(#009efd));
+  background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stio{
+  background:none !important;
+  -webkit-background-clip:none !important;
+  -webkit-text-fill-color:none !important;
+  color: white !important
+}

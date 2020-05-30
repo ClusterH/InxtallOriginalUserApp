@@ -1,0 +1,36 @@
+<ion-content class="credi_background">
+  <div class="contain" padding>
+    <ion-row>
+      <ion-col col-4>
+        <button (click)="GoBack()" ion-button icon-only clear class="icon-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </ion-col>
+      <ion-col col-4 text-center>
+      </ion-col>
+      <ion-col col-4></ion-col>
+    </ion-row>
+
+    <h2 class="txt1">Verify Your</h2>
+    <h2 class="txt2">Mobile Number</h2>
+
+    <form class="flp">
+      <div margin-bottom text-center>
+
+        <ion-row>
+          <ion-col col-12>
+            <input [(ngModel)]="otp" name="username" type="text" id="fname" />
+          </ion-col>
+        </ion-row>
+      </div>
+    </form>
+
+    <p class="txt3">We will send a SMS with a conformation code to this number </p>
+
+    <ion-row class="m-top-25">
+      <ion-col col-12 text-center>
+        <button (click)="GoToNext()" class="nxt_btn" text-center ion-button>Next</button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

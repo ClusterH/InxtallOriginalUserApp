@@ -1,0 +1,33 @@
+<ion-content padding class="modal-container" (tap)="Cancel(1)">
+  <div (tap)="Cancel(2)" class="product">
+    <ion-row (tap)="Cancel(2)" padding-top>
+      <ion-col col-3 text-right>
+        <img class="car-img" src="{{marchant?.profileImage}}">
+      </ion-col>
+      <ion-col col-9 style="margin-top: 11px;">
+        <h3 no-margin class="car-nm">{{marchant?.shopName}}</h3>
+        <h3 no-margin class="car-plat">{{marchant?.address}}</h3>
+        <h3></h3>
+      </ion-col>
+    </ion-row>
+    <ion-row (tap)="Cancel(2)">
+      <ion-col col-2 text-center>
+        <i class="fas fa-mobile-alt iconStyle"></i>
+      </ion-col>
+      <ion-col col-3 text-center>
+        <h2 no-margin class="car-plat">Distance</h2>
+        <h2 no-margin class="car-nm">{{distance}} km</h2>
+      </ion-col>
+      <ion-col col-2 text-center>
+        <h2 no-margin class="car-plat">Ser.</h2>
+        <h2 no-margin class="car-nm">{{marchant?.noOfService}}</h2>
+      </ion-col>
+      <ion-col col-5 text-center>
+        <button (tap)="Cancel(2)" (click)="GoToNext(marchant)" ion-button round outline style="width: 82px;font-size: 1rem;    border-color: #6e86ef;
+        color: #6e86ef;">Book
+          Now</button>
+      </ion-col>
+    </ion-row>
+    <div (tap)="Cancel(2)" class="rate">{{avgRating}} <i class="far fa-star"></i></div>
+  </div>
+</ion-content>

@@ -1,0 +1,79 @@
+page-update-car {
+  .title {
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    margin-top: 3px;
+    margin-left: 7px;
+  }
+
+  .backIcon {
+    font-size: 32px;
+    color: white;
+  }
+
+  .flp div {
+    position: relative;
+  }
+
+  .flp input,
+  .flp label {
+    width: 100%;
+    display: block;
+    font: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    height: 46px;
+    border: 0px solid #999;
+    background: rgba(99, 97, 97, 0.26);
+    color: white;
+  }
+
+  .flp input {
+    padding: 10px;
+    outline: none;
+    border-radius: 3px;
+  }
+
+  .flp label {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 10px 8px;
+    border-color: transparent;
+    color: #8a8989;
+    cursor: text;
+  }
+
+  .ch {
+    display: block;
+    float: left;
+    position: relative;
+    background: transparent;
+    color: white;
+    font-weight: 300;
+  }
+
+  .car-image {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%
+  }
+
+  .button-md {
+    margin: 0px !important;
+    height: 4.6rem !important
+  }
+
+  .ch:first-child {
+    padding-left: 2px;
+  }
+
+  .ch:last-child {
+    padding-right: 2px;
+  }
+
+  .focussed {
+    pointer-events: none;
+  }
+}

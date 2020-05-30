@@ -1,0 +1,101 @@
+page-modal {
+  $price-tag__height: 50px;
+  $price-tag__width-after: 20px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .rate {
+    height: 20px;
+    background-color: #667eea;
+    width: 48px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 25px;
+    color: white;
+    font-weight: 300;
+    padding-left: 9px;
+    border-bottom-right-radius: 13px;
+  }
+
+  .iconStyle {
+    font-size: 27px;
+    margin-left: 16px;
+    margin-top: 2px;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .product {
+    padding-bottom: 9px;
+    width: 294px;
+    border-radius: 8px;
+    height: auto;
+    position: relative;
+    background: white;
+    margin-top: 50%;
+    margin-left: 4vh;
+
+    &__price-tag {
+      width: 150px;
+      display: flex;
+      align-items: center;
+      height: $price-tag__height;
+      border-radius: 8px 8px 8px 0;
+      background: #ed6663;
+      z-index: 99;
+      position: absolute;
+      top: -15px;
+      left: -$price-tag__width-after;
+
+      &::after {
+        content: '';
+        position: absolute;
+        border-left: $price-tag__width-after solid transparent;
+        border-top: 10px solid #a72c29;
+        left: 0px;
+        top: 50px;
+      }
+
+      &-price {
+        margin-left: $price-tag__width-after;
+        color: #fff;
+        font-size: 24px;
+      }
+    }
+
+  }
+
+  .modal-container {
+    background-color: transparent;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .car-nm {
+    font-size: 15px;
+    color: black;
+    font-weight: 500;
+    margin-top: 6px;
+    margin-left: 6px;
+  }
+
+  .car-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .car-plat {
+    font-size: 11.5px;
+    color: gray;
+    font-weight: 300;
+    margin-left: 6px;
+    margin-top: 5px;
+  }
+
+}

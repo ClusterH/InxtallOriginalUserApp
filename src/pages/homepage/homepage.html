@@ -1,0 +1,46 @@
+<ion-content>
+
+  <div #map id="map" class="mapStyle"></div>
+  <ion-row style="position: absolute;top: 0;width: 100%">
+    <ion-col col-2>
+      <div class="menu-icon" menuToggle>
+        <ion-icon name="md-menu" class="icon-style"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col col-10>
+      <ion-searchbar [(ngModel)]="searching" (ionInput)="searchToggle()">
+      </ion-searchbar>
+    </ion-col>
+  </ion-row>
+
+  <div class="on-bottom">
+    <div class="bottom-content">
+      <div class="marchant-card" *ngFor="let i of marchant" (tap)="viewM(i)">
+        <div class="left-content">
+          <img src="{{i.data.profileImage}}" class="img-responsive" alt="Image">
+        </div>
+
+        <div class="right-content">
+          <span class="title">{{i.data.shopName}}</span>
+          <span class="category">
+            {{i.data.address | slice:0:30}}...
+          </span>
+          <span class="timeing">
+            <p no-margin class="v1">
+              <span>
+                <i [class]="i.avgRate >= 1 ? 'fas fa-star' : 'far fa-star'"></i>
+              </span><span>
+                <i [class]="i.avgRate >= 2 ? 'fas fa-star' : 'far fa-star'"></i>
+              </span><span>
+                <i [class]="i.avgRate >= 3 ? 'fas fa-star' : 'far fa-star'"></i>
+              </span><span>
+                <i [class]="i.avgRate >= 4 ? 'fas fa-star' : 'far fa-star'"></i>
+              </span><span>
+                <i [class]="i.avgRate >= 5 ? 'fas fa-star' : 'far fa-star'"></i>
+              </span> {{i.count}}</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
